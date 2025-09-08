@@ -11,9 +11,30 @@ window.addEventListener("load", () => {
 });
 
 /* start of functions */
+function onGridButtonEnter(e){
+    const button = e.target;
+    button.style.backgroundColor = "black";
+    toggleGlow(e);
+}
+
+function onGridButtonLeave(e){
+    toggleGlow(e);
+}
+
 function onGridButtonClick(e){
     const button = e.target;
     button.style.backgroundColor = "black";
+}
+
+function toggleGlow(e) {
+  const box = e.target;
+  const isGlowing = box.style.boxShadow !== "";
+
+  if (isGlowing) {
+    box.style.boxShadow = "";
+  } else {
+    box.style.boxShadow = "0 0 20px 5px rgba(0, 255, 255, 0.7)";
+  }
 }
 
 function onClearButtonClick(){
@@ -35,7 +56,8 @@ function createGrid(){
             button.style.width = grid.getBoundingClientRect().width / width + "px";
             button.style.height = grid.getBoundingClientRect().height / height + "px";
             button.style.flex = "1 0 auto";
-            button.addEventListener("mouseenter", onGridButtonClick);
+            button.addEventListener("mouseenter", onGridButtonEnter);
+            button.addEventListener("mouseleave", onGridButtonLeave);
             button.addEventListener("click", onGridButtonClick);
             grid.appendChild(button);
         }
