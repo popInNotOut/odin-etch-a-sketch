@@ -33,6 +33,7 @@ function createGrid(){
             button.style.width = grid.getBoundingClientRect().width / width + "px";
             button.style.height = grid.getBoundingClientRect().height / height + "px";
             button.addEventListener("mouseenter", onGridButtonClick);
+            button.addEventListener("click", onGridButtonClick);
             grid.appendChild(button);
         }
     }
