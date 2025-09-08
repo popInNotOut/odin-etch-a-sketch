@@ -28,10 +28,10 @@ function createGrid(){
     for (let i = 0; i < height; i++){
         for (let j = 0; j < width; j++){
             const button = document.createElement("div");
-            button.style.width = grid.offsetWidth / width + "px";
-            button.style.height = grid.offsetHeight / height + "px";
             button.style.boxSizing = "border-box";
             button.style.border = "1px solid black";
+            button.style.width = grid.getBoundingClientRect().width / width + "px";
+            button.style.height = grid.getBoundingClientRect().height / height + "px";
             button.addEventListener("mouseenter", onGridButtonClick);
             grid.appendChild(button);
         }
