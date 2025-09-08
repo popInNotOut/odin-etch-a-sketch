@@ -89,8 +89,8 @@ ul {
 #grid {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
-    height: 400px;
+    width: 20%;
+    aspect-ratio: 1 / 1;
 }
 /* END OF ID SELECTORS */
 
