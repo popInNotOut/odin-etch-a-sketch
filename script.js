@@ -4,9 +4,11 @@ const heightTextField = document.querySelector("#height");
 const clearButton = document.querySelector("#clear-grid-button");
 let width, height;
 clearButton.addEventListener("click", onClearButtonClick);
-createGrid();
 widthTextField.addEventListener("input", onWidthChange);
 heightTextField.addEventListener("input", onHeightChange);
+document.addEventListener("DOMContentLoaded", () => {
+    createGrid()
+});
 
 /* start of functions */
 function onGridButtonClick(e){
