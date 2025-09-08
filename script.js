@@ -11,7 +11,6 @@ heightTextField.addEventListener("input", onHeightChange);
 /* start of functions */
 function onGridButtonClick(e){
     const button = e.target;
-    console.log(button);
     button.style.backgroundColor = "black";
 }
 
@@ -31,7 +30,7 @@ function createGrid(){
             const button = document.createElement("button");
             button.style.flex = "1 1 " + (100/width) + "%";
             button.style.aspectRatio = "1 / 1";
-            button.addEventListener("click", onGridButtonClick);
+            button.addEventListener("mouseenter", onGridButtonClick);
             grid.appendChild(button);
         }
     }
