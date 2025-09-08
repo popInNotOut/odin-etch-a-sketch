@@ -6,7 +6,7 @@ let width, height;
 clearButton.addEventListener("click", onClearButtonClick);
 widthTextField.addEventListener("input", onWidthChange);
 heightTextField.addEventListener("input", onHeightChange);
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
     createGrid()
 });
 
