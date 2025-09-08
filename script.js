@@ -67,7 +67,7 @@ function onHeightChange(){
         resetGridWithNewDimenstions();
     }
     else {
-        const heightErrorMessageLabel = document.querySelector("height-error-msg");
+        const heightErrorMessageLabel = document.querySelector("#height-error-msg");
         heightErrorMessageLabel.textContent = "Invalid height, please enter an integer between 1 and 50";
     }
 }
