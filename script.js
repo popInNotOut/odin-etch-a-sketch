@@ -32,6 +32,7 @@ function createGrid(){
             button.style.border = "1px solid black";
             button.style.width = grid.getBoundingClientRect().width / width + "px";
             button.style.height = grid.getBoundingClientRect().height / height + "px";
+            button.style.flex = "1 0 auto";
             button.addEventListener("mouseenter", onGridButtonClick);
             button.addEventListener("click", onGridButtonClick);
             grid.appendChild(button);
