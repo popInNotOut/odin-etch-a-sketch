@@ -15,7 +15,7 @@ function onGridButtonClick(e){
 }
 
 function onClearButtonClick(){
-    const buttons = grid.querySelectorAll("button");
+    const buttons = grid.querySelectorAll("div");
     buttons.forEach(function(button){
         button.style.removeProperty("background-color");
     });
@@ -27,9 +27,11 @@ function createGrid(){
 
     for (let i = 0; i < height; i++){
         for (let j = 0; j < width; j++){
-            const button = document.createElement("button");
-            button.style.flex = "1 1 " + (100/width) + "%";
-            button.style.aspectRatio = "1 / 1";
+            const button = document.createElement("div");
+            button.style.width = grid.offsetWidth / width + "px";
+            button.style.height = grid.offsetHeight / height + "px";
+            button.style.boxSizing = "border-box";
+            button.style.border = "1px solid black";
             button.addEventListener("mouseenter", onGridButtonClick);
             grid.appendChild(button);
         }
@@ -38,7 +40,7 @@ function createGrid(){
 
 function onWidthChange() {
     const newWidth = widthTextField.value;
-    if (Number.isInteger(Number(newWidth)) && 1 <= Number(newWidth) && Number(newWidth) <= 100){
+    if (Number.isInteger(Number(newWidth)) && 1 <= Number(newWidth) && Number(newWidth) <= 50){
         const widthErrorMessageLabel = document.querySelector("#width-error-msg");
         widthErrorMessageLabel.textContent = "";
         onClearButtonClick();
@@ -47,13 +49,13 @@ function onWidthChange() {
     }
     else {
         const widthErrorMessageLabel = document.querySelector("#width-error-msg");
-        widthErrorMessageLabel.textContent = "Invalid width, please enter an integer between 1 and 100";
+        widthErrorMessageLabel.textContent = "Invalid width, please enter an integer between 1 and 50";
     }
 }
 
 function onHeightChange(){
     const newHeight = heightTextField.value;
-    if (Number.isInteger(Number(newHeight)) && 1 <= Number(newHeight) && Number(newHeight) <= 100){
+    if (Number.isInteger(Number(newHeight)) && 1 <= Number(newHeight) && Number(newHeight) <= 50){
         const heightErrorMessageLabel = document.querySelector("#height-error-msg");
         heightErrorMessageLabel.textContent = "";
         onClearButtonClick();
@@ -62,12 +64,12 @@ function onHeightChange(){
     }
     else {
         const heightErrorMessageLabel = document.querySelector("height-error-msg");
-        heightErrorMessageLabel.textContent = "Invalid height, please enter an integer between 1 and 100";
+        heightErrorMessageLabel.textContent = "Invalid height, please enter an integer between 1 and 50";
     }
 }
 
 function resetGridWithNewDimenstions(){
-    const buttons = grid.querySelectorAll("button");
+    const buttons = grid.querySelectorAll("div");
     buttons.forEach(button => button.remove());
     createGrid();
 }
