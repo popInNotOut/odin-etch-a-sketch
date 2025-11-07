@@ -23,12 +23,14 @@ To color a cell, you can either:
 
 * clicking on a square (for mobile users)
 
-<br>
-
-### Notes
-
 Additionally, you can do one more thing – change the dimensions of the grid.
 
 * please note acceptable width and height values range from 1 to 50.
 
 * each time you change the dimensions of the grid, the colored cells from your previous painting will be deleted.
+
+<br>
+
+## Notes
+
+**DO NOT RESIZE YOUR WINDOW AS THAT CAN MESS UP THE GRID**
