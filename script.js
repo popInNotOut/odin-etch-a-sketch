@@ -14,11 +14,11 @@ window.addEventListener("load", () => {
 function onGridButtonEnter(e){
     const button = e.target;
     button.style.backgroundColor = "black";
-    toggleGlow(e);
+    if (e.target.style.boxshadow === "" || e.target.style.boxshadow === undefined) toggleGlow(e);
 }
 
 function onGridButtonLeave(e){
-    toggleGlow(e);
+    if (e.target.style.boxShadow !== "") toggleGlow(e);
 }
 
 function onGridButtonClick(e){
@@ -56,8 +56,8 @@ function createGrid(){
             button.style.width = grid.getBoundingClientRect().width / width + "px";
             button.style.height = grid.getBoundingClientRect().height / height + "px";
             button.style.flex = "1 0 auto";
-            button.addEventListener("mouseenter", onGridButtonEnter);
-            button.addEventListener("mouseleave", onGridButtonLeave);
+            button.addEventListener("pointerenter", onGridButtonEnter);
+            button.addEventListener("pointerleave", onGridButtonLeave);
             button.addEventListener("click", onGridButtonClick);
             grid.appendChild(button);
         }
