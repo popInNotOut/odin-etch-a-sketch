@@ -1,6 +1,6 @@
 ## Description
 
-This is a etch-a-sketch web app implemented by myself that allows users to paint something.
+This is an etch-a-sketch web app implemented by myself that allows users to paint something.
 
 <table border="1" cellspacing="0" cellpadding="5">
   <tr>
